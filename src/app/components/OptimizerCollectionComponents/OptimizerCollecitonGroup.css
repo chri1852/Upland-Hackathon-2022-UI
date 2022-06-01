@@ -1,0 +1,30 @@
+.collection-grouper {
+  margin-right: 0px;
+  margin-left: 0px;
+  border-bottom: 1px solid;
+  border-color: #F8F9FA;
+}
+
+.collection-grouper-collection{
+  margin-right: 0px;
+  margin-left: 10px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: #F8F9FA;
+}
+
+.collection-grouper-collection-property {
+  margin-right: 0px;
+  margin-left: 15px;
+  
+}
+
+.collection-grouper-expand-toggle {
+  display: flex;
+  justify-content: right;
+}
+
+.collection-grouper-text-white {
+  color: #FFFFFF !important;
+}
+

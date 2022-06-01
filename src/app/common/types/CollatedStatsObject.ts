@@ -1,0 +1,16 @@
+export interface CollatedStatsObject {
+  dbId: number,
+  id: number,
+  totalProps: number,
+  lockedProps: number,
+  unlockedNonFSAProps: number,
+  unlockedFSAProps: number,
+  forSaleProps: number,
+  ownedProps: number,
+  percentMinted: number,
+  percentNonFSAMinted: number,
+  percentBuilt: number,
+  buildingCount: number,
+  cityId: number,
+  name: string,
+}

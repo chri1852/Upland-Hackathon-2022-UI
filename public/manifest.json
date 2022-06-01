@@ -1,0 +1,17 @@
+{
+  "short_name": "Optimizer",
+  "name": "Upland Optimizer",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 48x48 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "optimizerIcon.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    }
+  ],
+  "start_url": "/login"
+}

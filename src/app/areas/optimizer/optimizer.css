@@ -1,0 +1,39 @@
+.profile-header {
+  border-bottom: 3px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  border-color: black;
+
+  padding-top: 60px;
+  padding-bottom: 5px;
+  background-color: #17A2B8;
+  max-height: 25vh;
+  min-height: 250px;
+}
+
+.optimizer-min-width {
+  min-width: 650px;
+}
+
+.info-column {
+  width: 300px;
+  margin-right: 15px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.registered-user-col {
+  width: 300px;
+  margin-left: auto;
+  margin-right: 15px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}

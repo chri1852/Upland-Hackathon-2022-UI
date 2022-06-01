@@ -1,0 +1,21 @@
+
+.info-box-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.property-info-box-display {
+  position: absolute;
+  left: -300px;
+  bottom: 22px;
+  min-width: 300px;
+  padding: 0px 5px 0px 5px;
+  z-index: 1;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 1px;
+}
+
+.info-box-no-display {
+  display: none;
+}

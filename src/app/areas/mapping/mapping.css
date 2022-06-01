@@ -1,0 +1,15 @@
+
+.mapping-min-width {
+  min-width: 1350px;
+}
+
+.mapping-center-text {
+  text-align: center;
+}
+
+.mapping-map-size {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

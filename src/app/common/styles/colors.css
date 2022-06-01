@@ -1,0 +1,24 @@
+.color-collection-standard {
+  background-color: #174BC6;
+  color: #FFFFFF;
+}
+
+.color-collection-limited {
+  background-color: #C019CF;
+  color: #FFFFFF;
+}
+
+.color-collection-exclusive {
+  background-color: #FFA800;
+  color: #000000;
+}
+
+.color-collection-rare {
+  background-color: #FF0D00;
+  color: #000000;
+}
+
+.color-collection-ultrarare {
+  background-color: #E5DD00;
+  color: #000000;
+}

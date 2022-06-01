@@ -1,0 +1,29 @@
+.locations-header-padding {
+  margin-top: 60px;
+}
+
+.locations-min-width {
+  min-width: 1050px;
+}
+
+.locations-run-counts-box {
+  width: 400px;
+  margin-left: auto;
+  margin-right: 15px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.locations-greeting-box {
+  width: 600px;
+  margin-left: 15px;
+  margin-right: auto;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}

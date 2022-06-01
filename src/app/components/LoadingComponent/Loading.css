@@ -1,0 +1,8 @@
+.loading-center {
+  display: flex;
+  justify-content: center;
+}
+
+.loading-full-style {
+  margin-top: 60px;
+}

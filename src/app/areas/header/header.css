@@ -1,0 +1,23 @@
+.navbar-right {
+  display: flex;
+  justify-content: right;
+}
+
+.nav-spacing {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-min-width {
+  min-width: 500px;
+}
+
+.header-info-tooltip > .tooltip-inner {
+  max-width: 400px;
+  text-align: left;
+}
+
+.header-info-tooltip > .tooltip-arrow {
+  max-width: 400px;
+  text-align: left;
+}
