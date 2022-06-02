@@ -6,10 +6,11 @@ import WebCollection from '../../common/types/WebCollection';
 import WebForSaleFilters from '../../common/types/WebForSaleFilters';
 import WebNeighborhood from '../../common/types/WebNeighborhood';
 import BattleAsset from '../../common/types/BattleAsset';
+import Battle from '../../common/types/Battle';
 
 export interface PropertyState {
   propertiesForSale: CachedForSaleProperty[];
-  propertiesUnminted: CachedUnmintedProperty[];
+  propertiesUnminted: Battle[];
 
   isLoadingForSaleProperties: boolean;
   hasErrorForSaleProp: boolean;
@@ -34,4 +35,13 @@ export interface PropertyState {
   battleAsset: BattleAsset,
   hasLoadingHistoryError: boolean,
   loadingHistoryError: string,
+
+  showBattleModal: boolean,
+  battleBattleAsset: BattleAsset,
+
+  showBattleHistoryModal: boolean,
+  battleHistory: Battle[],
+
+  showJoinBattleModal: boolean,
+  joinBattleId: number
 }

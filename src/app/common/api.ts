@@ -477,6 +477,68 @@ export class ApiService {
     return properties$;
   }
 
+  postDebugUpdateBattles$ = () => {
+    this.checkForToken();
+
+    const response$: Observable<AjaxResponse> = this
+      .ajaxClient
+      .post({
+        url: `${this.baseUrl}/Battle/Debug/UpdateBattles`,
+        headers: this.headers,
+        body: {}
+      })
+
+    const properties$ = response$.pipe(
+      map(response => {
+        return response;
+      })
+    );
+
+    return properties$;
+  }
+
+  postCreateBattleRequest$ = (asset: BattleAsset, upxWager: number) => {
+    this.checkForToken();
+
+    const response$: Observable<AjaxResponse> = this
+      .ajaxClient
+      .post({
+        url: `${this.baseUrl}/Battle/Create`,
+        headers: this.headers,
+        body: {
+          battleAsset: asset,
+          upxWager: upxWager
+        }
+      })
+
+    const properties$ = response$.pipe(
+      map(response => {
+        return response;
+      })
+    );
+
+    return properties$;
+  }
+
+  getBattleHistory$ = (battleAssedId: number) => {
+    this.checkForToken();
+
+    const response$: Observable<AjaxResponse> = this
+      .ajaxClient
+      .get({
+        url: `${this.baseUrl}/Battle/History/${battleAssedId}`,
+        headers: this.headers,
+      })
+
+    const properties$ = response$.pipe(
+      map(response => {
+        return response;
+      })
+    );
+
+    return properties$;
+  }
+
   postResolveApprovedTrainings$ = () => {
     this.checkForToken();
 
@@ -497,15 +559,37 @@ export class ApiService {
     return properties$;
   }
 
-  postPropertiesUnminted$ = (request: PostPropertiesUnmintedRequest) => {
+  postPropertiesUnminted$ = () => {
+    this.checkForToken();
+
+    const response$: Observable<AjaxResponse> = this
+      .ajaxClient
+      .get({
+        url: `${this.baseUrl}/Battle/Active`,
+        headers: this.headers,
+      })
+
+    const properties$ = response$.pipe(
+      map(response => {
+        return response;
+      })
+    );
+
+    return properties$;
+  }
+
+  postJoinBattle$ = (battleAsset: BattleAsset, battleId: number) => {
     this.checkForToken();
 
     const response$: Observable<AjaxResponse> = this
       .ajaxClient
       .post({
-        url: `${this.baseUrl}/Properties/Unminted`,
+        url: `${this.baseUrl}/Battle/Join`,
         headers: this.headers,
-        body: request
+        body: {
+          battleAsset: battleAsset,
+          battleId: battleId
+        }
       })
 
     const properties$ = response$.pipe(

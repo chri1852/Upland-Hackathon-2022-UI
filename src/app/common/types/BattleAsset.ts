@@ -7,5 +7,6 @@ export default interface BattleAsset {
   rockSkill: number,
   paperSkill: number,
   sissorsSkill: number,
-  isTraining: boolean
+  isTraining: boolean,
+  isBattling: boolean,
 }

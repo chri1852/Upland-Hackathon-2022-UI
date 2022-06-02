@@ -18,6 +18,7 @@ import { BattleAssetTable } from '../BattleAssetTableComponent/BattleAssetTable'
 import { useAppContext } from  '../../common/app-context';
 import { ApiService } from '../../common/api';
 import { getUserProfile } from '../../store/actions/profileActions';
+import { getBattleHistory } from '../../store/actions/propertyActions';
 
 interface OwnProps {
   userProfile: UserProfile,
@@ -45,7 +46,9 @@ interface OwnProps {
   viewCategory: string,
   toggleImageModal: Function,
   trainAsset: Function,
-  getUserProfile: Function
+  getUserProfile: Function,
+  createBattle: Function,
+  getBattleHistory: Function
 };
 
 export type UserProfileProps = OwnProps;
@@ -130,7 +133,7 @@ export const UserProfileComponent = (props: UserProfileProps) => {
 
 
   const renderSelectedTable = () => {
-    return <BattleAssetTable battleAssets={props.userProfile.battleAssets} toggleImageModal={props.toggleImageModal} trainAsset={props.trainAsset}/>;
+    return <BattleAssetTable battleAssets={props.userProfile.battleAssets} toggleImageModal={props.toggleImageModal} trainAsset={props.trainAsset} createBattle={props.createBattle} getBattleHistory={props.getBattleHistory}/>;
   }
 
 

@@ -1,6 +1,7 @@
 import { Reducer } from 'redux';
 import { PropertyState } from '../states/propertyState';
 import WebForSaleFilters from '../../common/types/WebForSaleFilters';
+import Battle from '../../common/types/Battle';
 import {
   PropertyActionTypes,
   PostPropertiesForSaleActionType,
@@ -12,7 +13,13 @@ import {
   UpdateForSaleFormActionType,
   UpdateUnmintedFormActionType,
   GetPropertyHistoryActionType,
-  ClosePropertyHistoryActionType
+  ClosePropertyHistoryActionType,
+  CreateBattleActionType,
+  CloseCreateBattleActionType,
+  GetBattleHistoryCompletedActionType,
+  CloseBattleHistoryActionType,
+  JoinBattleActionType,
+  CloseJoinBattleActionType
 } from '../actions/propertyActions';
 import BattleAsset from '../../common/types/BattleAsset';
 
@@ -26,7 +33,13 @@ export type PropertyActions =
   | UpdateForSaleFormActionType
   | UpdateUnmintedFormActionType
   | GetPropertyHistoryActionType
-  | ClosePropertyHistoryActionType;
+  | ClosePropertyHistoryActionType
+  | CreateBattleActionType
+  | CloseCreateBattleActionType
+  | GetBattleHistoryCompletedActionType
+  | CloseBattleHistoryActionType
+  | JoinBattleActionType
+  | CloseJoinBattleActionType;
 
 const initialForSaleFormState: WebForSaleFilters = {
   cityId: 1,
@@ -84,7 +97,16 @@ const initialState: PropertyState = {
   battleAsset: {} as BattleAsset,
   showModal: false,
   hasLoadingHistoryError: false,
-  loadingHistoryError: ''
+  loadingHistoryError: '',
+
+  showBattleModal: false,
+  battleBattleAsset: {} as BattleAsset,
+
+  showBattleHistoryModal: false,
+  battleHistory: [],
+
+  showJoinBattleModal: false,
+  joinBattleId: 0,
 }
 
 export const PropertyReducer: Reducer<PropertyState> = (state = initialState, action: PropertyActions): PropertyState => {
@@ -130,7 +152,7 @@ export const PropertyReducer: Reducer<PropertyState> = (state = initialState, ac
         hasErrorUnmintedProp: false,
         errorUnmintedPropsMessage: '',
 
-        propertiesUnminted: action.payload!.response.properties
+        propertiesUnminted: action.payload!.response
       };
     case PropertyActionTypes.PostPropertiesUnmintedFailed:
       return {
@@ -175,6 +197,41 @@ export const PropertyReducer: Reducer<PropertyState> = (state = initialState, ac
         hasLoadingHistoryError: false,
         loadingHistoryError: "",
         battleAsset: {} as BattleAsset
+      }
+    case PropertyActionTypes.CreateBattle:
+      return {
+        ...state,
+        showBattleModal: true,
+        battleBattleAsset: action.payload!.battleAsset,
+      }
+    case PropertyActionTypes.CloseCreateBattle:
+      return {
+        ...state,
+        showBattleModal: false,
+        battleBattleAsset: {} as BattleAsset
+      }
+    case PropertyActionTypes.GetBattleHistoryCompleted:
+      return {
+        ...state,
+        showBattleHistoryModal: true,
+        battleHistory: action!.payload!.battleHistory
+      }
+    case PropertyActionTypes.CloseBattleHistory:
+      return {
+        ...state,
+        showBattleHistoryModal: false,
+      }
+    case PropertyActionTypes.JoinBattle:
+      return {
+        ...state,
+        showJoinBattleModal: true,
+        joinBattleId: action.payload!.battleId,
+      }
+    case PropertyActionTypes.CloseJoinBattle:
+      return {
+        ...state,
+        showJoinBattleModal: false,
+        joinBattleId: 0
       }
     default:
       return state;

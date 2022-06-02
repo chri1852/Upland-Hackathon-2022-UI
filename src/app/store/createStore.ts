@@ -14,7 +14,7 @@ import { getUserProfileEpic, getUserProfileByUsernameEpic, getUserRunCountEpic }
 import { getLastOptimizerRunEpic, postOptimizerRunEpic } from './epics/optimizerEpic';
 import { getLastAppraisalEpic, postRunAppraisalEpic } from './epics/appraisalEpic';
 import { getCollectionsEpic, getNeighborhoodsEpic, getStreetsEpic, getStatsEpic, getBlockchainStatusEpic, getAnnouncementsEpic } from './epics/infoEpic';
-import { postPropertiesForSaleEpic, postPropertiesUnmintedEpic } from './epics/propertyEpic';
+import { postPropertiesForSaleEpic, postPropertiesUnmintedEpic, getBattleHistoryEpic } from './epics/propertyEpic';
 import { postSaleHistoryEpic } from './epics/saleHistoryEpic';
 import { getMapEpic, postCreateMapEpic } from './epics/mappingEpic';
 import { getNFTHistoryEpic, postSearchNFTEpic } from './epics/nftEpic';
@@ -65,6 +65,7 @@ export const createStore = (config: AppConfig, apiService: ApiService) => {
     getAnnouncementsEpic,
     getNFTHistoryEpic,
     postSearchNFTEpic,
+    getBattleHistoryEpic
   )
 
   const middlewares = [epicMiddleware];

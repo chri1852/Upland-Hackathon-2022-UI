@@ -11,7 +11,7 @@ import { ErrorComponent } from '../../components/ErrorComponent/Error';
 import ProfilePropertyFilters from '../../common/types/ProfilePropertyFilters';
 import WebCollection from '../../common/types/WebCollection';
 import { getNFTHistory, closeNFTHistory, toggleImageModal } from '../../store/actions/nftActions';
-import { getPropertyHistory } from '../../store/actions/propertyActions';
+import { getPropertyHistory, createBattle } from '../../store/actions/propertyActions';
 import WebNFTHistory from '../../common/types/WebNFTHistory';
 import './profile.css';
 import PropertyHistoryComponent from '../../components/PropertyHistoryComponent/PropertyHistoryComponent';
@@ -21,6 +21,9 @@ import ProfileSparkHistoryFilters from '../../common/types/ProfileSparkHistoryFi
 import BattleAsset from '../../common/types/BattleAsset';
 import { useAppContext } from  '../../common/app-context';
 import { ApiService } from '../../common/api';
+import CreateBattleComponent from '../../components/CreateBattleComponent/CreateBattleComponent';
+import { getBattleHistory } from '../../store/actions/propertyActions';
+import BattleHistoryComponent from '../../components/ViewBattleHistoryComponet/ViewBattleHistoryComponent';
 
 interface StateProps {
   isLoadingCollections: boolean,
@@ -58,6 +61,8 @@ interface DispatchProps {
   toggleImageModal: (url: string, name: string) => void;
   updateSparkHistoryFilters: (filters: ProfileSparkHistoryFilters) => void;
   getUserProfile: () => void;
+  createBattle: (battleAsset: BattleAsset) => void;
+  getBattleHistory: (battleAssetId: number) => void;
 }
 
 export type ProfileProps = DispatchProps & StateProps;
@@ -116,6 +121,8 @@ export const Profile = (props: ProfileProps) => {
           sparkHistoryFilters={props.sparkHistoryFilters}
           trainAsset={props.getPropertyHistory}
           getUserProfile={props.getUserProfile}
+          createBattle={props.createBattle}
+          getBattleHistory={props.getBattleHistory}
           />
       )
     }
@@ -124,6 +131,8 @@ export const Profile = (props: ProfileProps) => {
     <>
       <ImageModalComponent/>
       <PropertyHistoryComponent/>
+      <CreateBattleComponent />
+      <BattleHistoryComponent />
       <Container fluid={true} className="bg-secondary text-light battleAsset-min-width">
         {renderUserProfile()}
       </Container>
@@ -142,6 +151,8 @@ export const mapDispatchToProps = (dispatch: Dispatch) => {
     toggleImageModal: (url: string, name: string) => dispatch(toggleImageModal(url, name)),
     updateSparkHistoryFilters: (filters: ProfileSparkHistoryFilters) => dispatch(updateLoggedInSparkHistoryFilters(filters)),
     getUserProfile: () => dispatch(getUserProfile()),
+    createBattle: (asset: BattleAsset) => dispatch(createBattle(asset)),
+    getBattleHistory: (battleAssetId: number) => dispatch(getBattleHistory(battleAssetId))
   }
 
   return dispatchProps;

@@ -12,6 +12,8 @@ export interface OwnProps {
   battleAssets: BattleAsset[],
   toggleImageModal: Function,
   trainAsset: Function,
+  createBattle: Function,
+  getBattleHistory: Function
 }
 
 export const BattleAssetTable = (props: OwnProps) => {
@@ -23,6 +25,11 @@ export const BattleAssetTable = (props: OwnProps) => {
             <th>
               <div className="filter-col">
                 <Form.Label>Asset Id</Form.Label>
+              </div>
+            </th>
+            <th>
+              <div className="filter-col">
+                <Form.Label>Battle Asset Id</Form.Label>
               </div>
             </th>
             <th>
@@ -43,11 +50,17 @@ export const BattleAssetTable = (props: OwnProps) => {
             <th>
               <Form.Label></Form.Label>
             </th>
+            <th>
+              <Form.Label></Form.Label>
+            </th>
+            <th>
+              <Form.Label></Form.Label>
+            </th>
           </tr>
         </thead>
         <tbody>
           {props.battleAssets
-            .map((p) => <BattleAssetTableEntry key={p.id} battleAsset={p} toggleImageModal={props.toggleImageModal} trainAsset={props.trainAsset}/>)}
+            .map((p) => <BattleAssetTableEntry key={p.id} battleAsset={p} toggleImageModal={props.toggleImageModal} trainAsset={props.trainAsset} createBattle={props.createBattle} getBattleHistory={props.getBattleHistory}/>)}
         </tbody>
       </Table>
     </div>
