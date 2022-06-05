@@ -44,7 +44,7 @@ export const BattleAssetTable = (props: OwnProps) => {
             </th>
             <th>
               <div className="filter-col">
-                <Form.Label>Rock / Paper / Sissors</Form.Label>
+                <Form.Label>Rock / Paper / Scissors</Form.Label>
               </div>
             </th>
             <th>

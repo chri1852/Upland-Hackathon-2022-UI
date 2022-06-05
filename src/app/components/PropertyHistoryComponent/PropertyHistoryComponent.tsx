@@ -68,7 +68,7 @@ const PropertyHistoryComponent = (props: PropertyHistoryProps) => {
             }}>
               <option key={"Rock"} value={"Rock"}>Rock {props.battleAsset.rockSkill}</option>
               <option key={"Paper"} value={"Paper"}>Paper {props.battleAsset.paperSkill}</option>
-              <option key={"Sissors"} value={"Sissors"}>Sissors {props.battleAsset.sissorsSkill}</option>
+              <option key={"Sissors"} value={"Sissors"}>Scissors {props.battleAsset.sissorsSkill}</option>
             </Form.Control>
           </Col>
         </Row>

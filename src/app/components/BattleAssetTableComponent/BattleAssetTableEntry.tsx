@@ -21,7 +21,7 @@ export const BattleAssetTableEntry = (props: OwnProps) => {
       <td>{props.battleAsset.assetCategory}</td>
       <td>{props.battleAsset.assetName}</td>
       <td>{props.battleAsset.rockSkill} / {props.battleAsset.paperSkill} / {props.battleAsset.sissorsSkill}</td>
-      <td>{props.battleAsset.isTraining ? "In Training" : props.battleAsset.isBattling ? "Battling" : <Button onClick={() => props.createBattle(props.battleAsset)}>Battle</Button>}</td>
+      <td>{props.battleAsset.isTraining ? "In Training" : props.battleAsset.isBattling ? "Battling" : <Button onClick={() => props.createBattle(props.battleAsset)}>Create Battle</Button>}</td>
       <td>{props.battleAsset.isTraining ? "In Training" : props.battleAsset.isBattling ? "Battling" : <Button onClick={() => props.trainAsset(props.battleAsset)}>Train</Button>}</td>
       <td>
         <a className="nft-table-icon-padding">

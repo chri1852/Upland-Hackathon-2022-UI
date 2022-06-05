@@ -16,7 +16,7 @@ export const BattleTableEntry = (props: OwnProps) => {
       <td>{props.battle.id}</td>
       <td>{props.battle.opponentSkills}</td>
       <td>{props.battle.upxPerSide}</td>
-      <td><Button onClick={() => props.joinBattle(props.battle.id)}>Join Battle</Button></td>
+      <td>{props.battle.challengerBattleAssetId ? "Battling" : <Button onClick={() => props.joinBattle(props.battle.id)}>Join Battle</Button>}</td>
     </tr>
   );
 }

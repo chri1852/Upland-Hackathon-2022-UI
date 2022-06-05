@@ -75,6 +75,10 @@ export const UserProfileComponent = (props: UserProfileProps) => {
     props.getUserProfile();
   }
 
+  const refreshBattlers = () => {
+    props.getUserProfile();
+  }
+
   const renderAvatar = () => {
     if (loading) {
       return (
@@ -121,6 +125,7 @@ export const UserProfileComponent = (props: UserProfileProps) => {
       return (
         <div className="profile-Username">
           <Row><Button onClick={ResolveAllTrainings}>Debug Finish All Trainings</Button></Row>
+          <Row className="buttonPaddingTop5"><Button onClick={refreshBattlers}>Refresh Battlers</Button></Row>
         </div>
       );
     } else {
